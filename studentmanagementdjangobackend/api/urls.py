@@ -20,11 +20,15 @@ from django.urls.conf import include
 
 urlpatterns = [
     # path('', views.apiOverview,name="apiOverview"),
-    path('list/', views.getUsers,name="list"),
-    path('get-by-id/<int:id>',views.getById,name='get-by-id'),
-    path('add-new/',views.addNewUser,name="add-new"),
-    path('update-user/<int:id>',views.updateUser,name="update-user"),
-    path('delete-user/<int:id>',views.deleteById,name="delete-user"),
-    path('sign-in/',views.signIn,name="sign-in"),
-    path('user-sign-in/',views.signIn1,name="sign-in")
+    path('list/', views.getUsers, name="list"),
+    path('get-by-id/<int:id>', views.getById, name='get-by-id'),
+    path('add-new/', views.addNewUser, name="add-new"),
+    path('update-user/<int:id>', views.updateUser, name="update-user"),
+    path('delete-user/<int:id>', views.deleteById, name="delete-user"),
+    path('sign-in/', views.signIn, name="sign-in"),
+    path('user-sign-in/', views.signIn1, name="sign-in"),
+    path('upload-file/', views.upload, name="upload-file"),
+    path('user-profile/<int:id>', views.userProfile, name="user-profile"),
+    path('image-match/', views.imageMatch, name="image-match")
+
 ]

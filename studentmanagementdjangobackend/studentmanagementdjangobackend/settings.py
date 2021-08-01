@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 from api.apps import ApiConfig
-
+import cloudinary
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,6 +27,21 @@ SECRET_KEY = 'django-insecure-ct09ac-n!w(m=3@ho1y7u!)imrs6byfoc#v=%m=m@y6gvmvlvr
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+DEFAULT_FROM_EMAIL = 'test@test.com'
+SERVER_EMAIL = 'samadhan563@gmail.com'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'samadhan563@gmail.com'
+EMAIL_HOST_PASSWORD = 'Samadhan@0904'
+EMAIL_PORT = 587
+
+cloudinary.config( 
+  cloud_name = "dsealyady", 
+  api_key = "971679722842593", 
+  api_secret = "f4lsXi_RSSqKkFAmFGhYZLsBzxQ" 
+)
 
 
 # Application definition
@@ -43,6 +58,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'ninja',
+    'cloudinary',
+    'deepface'
 ]
 
 MIDDLEWARE = [

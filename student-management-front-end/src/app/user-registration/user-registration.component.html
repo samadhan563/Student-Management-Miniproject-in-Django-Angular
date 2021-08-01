@@ -1,0 +1,68 @@
+<div class="container-fluied bg-light ">
+    <div class="col col-md-6 offset-md-3 offset-md-3">
+        <div class="card mt-4">
+            <form class="form-group" #userForm="ngForm">
+                <div class="card-header text-center font-weight-bold bg-light h3">
+                    User Registration
+                </div>
+                <div class="card-body">
+                    {{errorMessage}}
+                    <div class="row form-group mx-2 my-4">
+                        <label class="col-md-4 col-form-label col-form-label-lg" for="userName">User Name<span
+                                class="text-danger h4">*</span> : </label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control form-control-lg" name="userName"
+                                placeholder="Enter User Name" [(ngModel)]="userModel.userName">
+                        </div>
+                    </div>
+                    <div class="row form-group mx-2 my-4">
+                        <label class="col-md-4 col-form-label col-form-label-lg" for="userName">Password<span
+                                class="text-danger">* :</span></label>
+                        <div class="col-md-8">
+                            <div class="input-group">
+                                <input type="password" class="form-control form-control-lg" placeholder="Enter Password"
+                                    name="password" [(ngModel)]="userModel.password">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" (click)="viewPassword($event)">
+                                       
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group mx-2 my-4">
+                        <label class="col-md-4 col-form-label col-form-label-lg" for="inputState">Role
+                            <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-8">
+                            <select class="form-select form-control form-control-lg" id="inputState" name="role"
+                                [(ngModel)]="userModel.role" aria-placeholder="Select Role">
+                                <option selected >Select Role :</option>
+                                <option value="Student">Student</option>
+                                <option value="College">College</option>
+                                <option value="Admin">Admin</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group mx-4 my-4">
+                        <div class="custom-control custom-checkbox mr-sm-2">
+                            <input type="checkbox" class="custom-control-input custom-control-input-lg"
+                                id="customControlAutosizing">
+                            <label class="custom-control-label custom-control-label-lg"
+                                for="customControlAutosizing">Remember my
+                                preference</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <button type="submit" (blur)="onBlurEvent($event)"
+                            class="btn btn-outline-secondary btn-lg btn-block col-md-5 mx-4 mt-2"
+                            (click)="onSumit()">Submit</button>
+                        <button class="btn btn-outline-danger btn-lg  col-md-5 mx-3 mt-2">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

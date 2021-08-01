@@ -1,7 +1,7 @@
 
 from django.db.models import fields
 from rest_framework import serializers
-from .models import User
+from .models import User, UserProfile
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -9,7 +9,12 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         # fields = ['id', 'userName', 'password', 'role']
         fields = '__all__'
-        
+
+
+class UserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserProfile
+        fields = '__all__'
 
 
 class LoginSerializer(serializers.Serializer):
@@ -17,7 +22,7 @@ class LoginSerializer(serializers.Serializer):
     password = serializers.CharField(max_length=20)
 
     def getUserName(self):
-        return self.userName 
+        return self.userName
 
     def getPassword(self):
-        return self.password 
+        return self.password
